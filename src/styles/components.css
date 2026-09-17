@@ -1,0 +1,97 @@
+.lectra-button {
+  border: 0;
+  border-radius: var(--radius-pill);
+  min-height: 3rem;
+  padding: 0.8rem 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    box-shadow var(--motion-base) var(--ease-standard),
+    background var(--motion-base) var(--ease-standard),
+    color var(--motion-base) var(--ease-standard);
+}
+
+.lectra-button--primary {
+  background: linear-gradient(135deg, var(--lectra-burgundy), var(--lectra-burgundy-700));
+  color: white;
+  box-shadow: 0 12px 26px rgba(125, 28, 36, 0.22);
+}
+
+.lectra-button--secondary {
+  background: rgba(38, 107, 125, 0.1);
+  color: var(--lectra-teal-700);
+}
+
+.lectra-button--ghost {
+  background: transparent;
+  color: var(--lectra-text);
+  box-shadow: inset 0 0 0 1px var(--lectra-line);
+}
+
+.lectra-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(15, 15, 16, 0.06);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(18px);
+}
+
+.lectra-card--brand {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 82% 15%, rgba(10, 66, 255, 0.24), transparent 22%),
+    linear-gradient(145deg, #25090d, var(--lectra-burgundy) 70%, #421116);
+  box-shadow: var(--shadow-brand);
+}
+
+.lectra-card__inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1.15rem, 3vw, 1.75rem);
+}
+
+.lectra-orb {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: var(--lectra-blue);
+  box-shadow: 0 0 0 7px rgba(10, 66, 255, 0.08), 0 0 22px rgba(10, 66, 255, 0.75);
+}
+
+.lectra-logo-mark {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  transform: rotate(-2deg);
+}
+
+.lectra-logo-mark::before,
+.lectra-logo-mark::after {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  border-radius: 0.34rem;
+  background: linear-gradient(145deg, #3d8fa3, #163f49);
+  box-shadow: inset 0 1px rgba(255,255,255,0.24), 0 12px 24px rgba(0,0,0,0.22);
+}
+
+.lectra-logo-mark::before {
+  width: 1.05rem;
+  height: 3.25rem;
+}
+
+.lectra-logo-mark::after {
+  width: 3.25rem;
+  height: 1.05rem;
+}
+
+.lectra-logo-mark .lectra-orb {
+  position: absolute;
+  left: 1.32rem;
+  bottom: 1.32rem;
+  z-index: 2;
+}
