@@ -1,0 +1,314 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.app-stage {
+  min-height: 100svh;
+}
+
+.splash-screen {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: white;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(10, 66, 255, 0.18), transparent 20rem),
+    linear-gradient(155deg, #22080c 0%, #541219 46%, #7d1c24 100%);
+}
+
+.splash-screen::after {
+  content: '';
+  position: absolute;
+  inset: auto -18% -30% -18%;
+  height: 52%;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.06), transparent 55%),
+    linear-gradient(170deg, transparent 30%, rgba(0, 0, 0, 0.42));
+  transform: skewY(-6deg);
+  pointer-events: none;
+}
+
+.splash-screen__ambient {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(44px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.splash-screen__ambient--one {
+  width: 17rem;
+  height: 17rem;
+  top: -5rem;
+  right: -6rem;
+  background: var(--lectra-teal);
+}
+
+.splash-screen__ambient--two {
+  width: 10rem;
+  height: 10rem;
+  left: -2rem;
+  bottom: 9rem;
+  background: #c94a55;
+}
+
+.splash-screen__content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 30rem);
+  min-height: 74svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.lectra-logo-mark--hero {
+  width: 8.5rem;
+  height: 8.5rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.32));
+}
+
+.lectra-logo-mark--hero::before,
+.lectra-logo-mark--hero::after {
+  left: 2.1rem;
+  bottom: 2rem;
+  border-radius: 0.48rem;
+}
+
+.lectra-logo-mark--hero::before {
+  width: 1.7rem;
+  height: 5.5rem;
+}
+
+.lectra-logo-mark--hero::after {
+  width: 5.5rem;
+  height: 1.7rem;
+}
+
+.lectra-logo-mark--hero .lectra-orb {
+  left: 2.22rem;
+  bottom: 2.11rem;
+}
+
+.splash-screen__wordmark {
+  margin: 0;
+  font-size: clamp(1.55rem, 7vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+}
+
+.splash-screen__tagline {
+  margin: 0.55rem 0 0;
+  color: rgba(255,255,255,0.58);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
+
+.splash-screen__statement {
+  margin: 2.4rem 0 0;
+  max-width: 17rem;
+  color: rgba(255,255,255,0.76);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.splash-screen__enter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 19rem);
+  margin-top: 3rem;
+  min-height: 3.4rem;
+  padding: 0 1.2rem 0 1.35rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius-pill);
+  color: white;
+  background: rgba(255,255,255,0.09);
+  box-shadow: inset 0 1px rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  cursor: pointer;
+}
+
+.onboarding-screen {
+  min-height: 100svh;
+  padding:
+    max(1.25rem, env(safe-area-inset-top))
+    1.2rem
+    max(1.5rem, env(safe-area-inset-bottom));
+  background:
+    radial-gradient(circle at 100% 0%, rgba(38, 107, 125, 0.10), transparent 18rem),
+    var(--lectra-surface);
+}
+
+.onboarding-screen__topbar {
+  width: min(100%, 34rem);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.onboarding-screen__back,
+.onboarding-screen__skip {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--lectra-text);
+}
+
+.onboarding-screen__back {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--lectra-line);
+  font-size: 1.15rem;
+}
+
+.onboarding-screen__skip {
+  padding: 0.8rem 0;
+  font-weight: 700;
+}
+
+.onboarding-screen__content {
+  width: min(100%, 34rem);
+  margin: 3.2rem auto 0;
+}
+
+.onboarding-screen__title {
+  margin: 0;
+  max-width: 10ch;
+  font-size: clamp(3rem, 13vw, 5.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+}
+
+.onboarding-screen__title span {
+  color: var(--lectra-burgundy);
+}
+
+.onboarding-screen__copy {
+  max-width: 31rem;
+  margin: 1.35rem 0 0;
+  color: var(--lectra-text-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.onboarding-screen__visual {
+  position: relative;
+  height: 18rem;
+  margin: 2.5rem 0 2rem;
+  perspective: 900px;
+}
+
+.onboarding-screen__depth-card {
+  position: absolute;
+  left: 50%;
+  width: min(72%, 18rem);
+  height: 9rem;
+  padding: 1.15rem;
+  border-radius: 1.55rem;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 28px 60px rgba(43, 9, 13, 0.19);
+  transform-style: preserve-3d;
+}
+
+.onboarding-screen__depth-card span {
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.58;
+  letter-spacing: 0.16em;
+}
+
+.onboarding-screen__depth-card strong {
+  display: block;
+  margin-top: 2.8rem;
+  font-size: 1.4rem;
+}
+
+.onboarding-screen__depth-card--one {
+  top: 3.2rem;
+  background: linear-gradient(145deg, #2b090d, var(--lectra-burgundy));
+  transform: translateX(-68%) rotateY(18deg) rotateZ(-5deg);
+}
+
+.onboarding-screen__depth-card--two {
+  top: 1.2rem;
+  background: linear-gradient(145deg, #163f49, var(--lectra-teal));
+  transform: translateX(-32%) rotateY(-18deg) rotateZ(5deg);
+}
+
+.onboarding-screen__depth-card--three {
+  top: 6.4rem;
+  background: linear-gradient(145deg, #191919, #303033);
+  transform: translateX(-50%) rotateX(9deg);
+}
+
+.onboarding-screen__spark {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 8rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
+  background: var(--lectra-blue);
+  box-shadow:
+    0 0 0 8px rgba(10,66,255,0.08),
+    0 0 32px rgba(10,66,255,0.82);
+}
+
+.onboarding-screen__actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.onboarding-screen__actions .lectra-button {
+  width: 100%;
+}
+
+.onboarding-screen__actions p {
+  margin: 0;
+  text-align: center;
+  color: var(--lectra-text-soft);
+  font-size: 0.88rem;
+}
+
+.onboarding-screen__actions p button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--lectra-burgundy);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (min-width: 760px) {
+  .onboarding-screen {
+    display: grid;
+    align-content: center;
+  }
+
+  .onboarding-screen__content {
+    margin-top: 2rem;
+  }
+}
