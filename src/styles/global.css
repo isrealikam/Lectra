@@ -3,7 +3,7 @@
 }
 
 html {
-  background: var(--lectra-surface);
+  background: #eceef0;
   color: var(--lectra-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -15,8 +15,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 90% 0%, rgba(38, 107, 125, 0.08), transparent 28rem),
-    var(--lectra-surface);
+    radial-gradient(circle at 15% 10%, rgba(125, 28, 36, 0.08), transparent 26rem),
+    radial-gradient(circle at 90% 20%, rgba(38, 107, 125, 0.08), transparent 28rem),
+    #eceef0;
 }
 
 button,
@@ -26,59 +27,17 @@ select {
   font: inherit;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 button {
   -webkit-tap-highlight-color: transparent;
 }
 
+img,
+svg {
+  display: block;
+}
+
 ::selection {
   background: rgba(10, 66, 255, 0.14);
-}
-
-.lectra-shell {
-  width: min(100%, 1180px);
-  margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2.5rem);
-}
-
-.lectra-eyebrow {
-  margin: 0 0 0.5rem;
-  color: var(--lectra-teal);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.lectra-title {
-  margin: 0;
-  max-width: 12ch;
-  font-size: clamp(2.5rem, 8vw, 5.75rem);
-  line-height: 0.94;
-  letter-spacing: -0.065em;
-}
-
-.lectra-copy {
-  max-width: 42rem;
-  color: var(--lectra-text-soft);
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.65;
-}
-
-.lectra-grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-@media (max-width: 760px) {
-  .lectra-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
