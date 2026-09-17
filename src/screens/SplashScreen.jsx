@@ -1,30 +1,37 @@
 import { motion } from 'motion/react'
 import { enterUp, staggerChildren } from '../motion/presets.js'
 
-function LogoMark() {
-  return (
-    <motion.div
-      className="lectra-logo-mark lectra-logo-mark--hero"
-      initial={{ opacity: 0, scale: 0.86, rotate: -5 }}
-      animate={{ opacity: 1, scale: 1, rotate: -2 }}
-      transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
-      aria-label="Lectra logo"
-    >
-      <motion.span
-        className="lectra-orb"
-        initial={{ opacity: 0, scale: 0.4 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.45, duration: 0.38 }}
-      />
-    </motion.div>
-  )
-}
-
 export default function SplashScreen({ onContinue }) {
   return (
-    <section className="splash-screen" aria-labelledby="lectra-splash-title">
-      <div className="splash-screen__ambient splash-screen__ambient--one" />
-      <div className="splash-screen__ambient splash-screen__ambient--two" />
+    <section className="splash-screen" aria-label="Lectra">
+      <div className="splash-screen__glow splash-screen__glow--top" />
+      <div className="splash-screen__glow splash-screen__glow--bottom" />
+
+      <svg
+        className="splash-screen__terrain"
+        viewBox="0 0 430 260"
+        aria-hidden="true"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <linearGradient id="terrainFill" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stopColor="#2b0b10" />
+            <stop offset="58%" stopColor="#54141b" />
+            <stop offset="100%" stopColor="#17070a" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0 205 L62 170 L105 186 L154 126 L191 150 L245 91 L292 128 L336 104 L430 174 L430 260 L0 260 Z"
+          fill="url(#terrainFill)"
+        />
+        <g opacity=".18" stroke="#c04a55" strokeWidth="1">
+          <path d="M0 205 L62 170 L105 186 L154 126 L191 150 L245 91 L292 128 L336 104 L430 174" fill="none" />
+          <path d="M18 221 L62 170 L85 225" fill="none" />
+          <path d="M105 186 L154 126 L173 210" fill="none" />
+          <path d="M191 150 L245 91 L270 213" fill="none" />
+          <path d="M292 128 L336 104 L391 220" fill="none" />
+        </g>
+      </svg>
 
       <motion.div
         className="splash-screen__content"
@@ -32,11 +39,17 @@ export default function SplashScreen({ onContinue }) {
         initial="initial"
         animate="animate"
       >
-        <LogoMark />
+        <motion.div
+          className="splash-screen__logo-shell"
+          variants={enterUp}
+          whileTap={{ scale: 0.98 }}
+        >
+          <img src="/lectra-logo.jpg" alt="Lectra" className="splash-screen__logo" />
+        </motion.div>
 
-        <motion.div variants={enterUp}>
-          <p className="splash-screen__wordmark">LECTRA</p>
-          <p className="splash-screen__tagline">LEARN · BUILD · GROW</p>
+        <motion.div className="splash-screen__brand" variants={enterUp}>
+          <h1>LECTRA</h1>
+          <p>LEARN · BUILD · GROW</p>
         </motion.div>
 
         <motion.p className="splash-screen__statement" variants={enterUp}>
@@ -45,12 +58,12 @@ export default function SplashScreen({ onContinue }) {
 
         <motion.button
           type="button"
-          className="splash-screen__enter"
+          className="splash-screen__continue"
           variants={enterUp}
           whileTap={{ scale: 0.97 }}
           onClick={onContinue}
         >
-          Enter Lectra
+          Continue
           <span aria-hidden="true">→</span>
         </motion.button>
       </motion.div>
