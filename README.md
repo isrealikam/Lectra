@@ -4,18 +4,13 @@ LECTRA is a student-centred campus coordination app for students, class represen
 
 ## Current build
 
-This repository has been restarted from scratch around the approved LECTRA visual direction:
+The rebuild currently contains only the first polished product experience:
 
-- premium off-white UI with white cards
-- burgundy primary brand colour
-- teal / electric-blue accents
-- official metallic teal L logo
-- animated splash screen
-- role-based onboarding for Student, Class Rep, and Lecturer
-- student cohort joining and course selection
-- Class Rep cohort setup and QR invite flow
-- Lecturer course joining by QR only
-- first Student, Class Rep, and Lecturer dashboard shells
+- an animated burgundy splash screen using the official metallic teal L logo
+- a responsive welcome screen using the official campus photograph
+- the approved off-white, burgundy, teal, and electric-blue brand direction
+
+The rest of the application is intentionally on hold while this opening experience is reviewed.
 
 ## Run locally
 
