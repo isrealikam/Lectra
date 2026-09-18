@@ -87,9 +87,29 @@ function Splash({ onDone }) {
 }
 
 function Welcome({ next }) {
+  const [campusImage, setCampusImage] = useState('')
+
+  useEffect(() => {
+    let active = true
+    Promise.all(
+      [1, 2, 3, 4, 5, 6].map(part =>
+        fetch(`/assets/campus-${part}.b64`).then(response => response.text())
+      )
+    )
+      .then(parts => {
+        if (active) setCampusImage(`data:image/webp;base64,${parts.join('')}`)
+      })
+      .catch(() => {})
+
+    return () => { active = false }
+  }, [])
+
   return (
     <section className="welcome-screen">
-      <div className="welcome-photo" />
+      <div
+        className="welcome-photo"
+        style={campusImage ? { backgroundImage: `url("${campusImage}")` } : undefined}
+      />
       <div className="welcome-shade" />
       <button className="skip-link" onClick={() => next('auth')}>Skip</button>
       <div className="welcome-copy">
