@@ -58,7 +58,7 @@ button { cursor: pointer; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 .welcome-screen { background: #fff; }
-.welcome-photo { position: absolute; inset: 0 0 22%; background-color: #eef0ef; background-position: center 44%; background-size: cover; background-repeat: no-repeat; transition: opacity .35s ease; }
+.welcome-photo { position: absolute; inset: 0 0 22%; background: #eef0ef url('/assets/onboarding-campus.webp') center 44% / cover no-repeat; }
 .welcome-shade { position: absolute; inset: 0 0 22%; background: linear-gradient(180deg, rgba(247,247,245,.96) 0%, rgba(247,247,245,.72) 24%, rgba(247,247,245,.05) 56%, rgba(247,247,245,0) 100%); }
 .welcome-screen::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: 10%; height: 190px; background: #fff; border-radius: 50% 50% 0 0 / 44% 44% 0 0; transform: translateY(52%); }
 .skip-link { position: absolute; right: 22px; top: 26px; z-index: 4; border: 0; background: transparent; color: #101828; font-weight: 600; }
